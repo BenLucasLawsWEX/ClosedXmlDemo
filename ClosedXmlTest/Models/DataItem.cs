@@ -9,6 +9,7 @@ namespace ClosedXmlTest.Models
     internal class DataItem
     {
         public int Id { get; set; }
-        public string Text { get; set; }
+        public string WrappedText { get; set; }
+        public string MultilineText { get; set; }
     }
 }

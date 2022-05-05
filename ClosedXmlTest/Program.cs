@@ -22,12 +22,20 @@ var random = new Random(DateTime.Now.Millisecond);
 
 for (int dataItemCount = 0; dataItemCount < rowsToGenerate; dataItemCount++)
 {
-    // Add text content of a random length so only some rows will wrap across
-    // multiple lines
     var wordCount = random.Next(1, 20);
-    var text = string.Concat(Enumerable.Repeat("text ", wordCount));
+    var wrappedText = string.Join(" ", Enumerable.Repeat("text", wordCount));
 
-    reportContent.DataItems.Add(new DataItem { Id = dataItemCount, Text = text });
+    var lineCount = random.Next(1, 3);
+    var multilineText = string.Join(";\r\n", Enumerable.Repeat("text", lineCount));
+
+    var dataItem = new DataItem 
+    { 
+        Id = dataItemCount,
+        WrappedText = wrappedText,
+        MultilineText = multilineText 
+    };
+
+    reportContent.DataItems.Add(dataItem);
 }
 
 // Apply the data to the template
