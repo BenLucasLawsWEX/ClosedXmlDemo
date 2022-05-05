@@ -2,7 +2,7 @@
 
 using ClosedXML.Excel;
 using ClosedXML.Report;
-using ClosedXmlTest.Models;
+using ClosedXmlDemo.Models;
 
 const string TEMPLATE_FILE = @".\template.xlsx";
 const string OUTPUT_FILE = @".\output.xlsx";
